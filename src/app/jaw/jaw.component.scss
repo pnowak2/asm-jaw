@@ -1,5 +1,6 @@
 .asm-jaw {
   font-family: Arial;
+  font-weight: normal; 
   user-select: none;
 
   &__outline {
@@ -15,7 +16,6 @@
   }
 
   &__text {
-    fill: #f3858c;
     font-size: 20px;
   }
 
@@ -35,16 +35,6 @@
       &-highlight {
         fill: #fff;
       }
-      
-      &:hover {
-        .asm-jaw__tooth-front-shadow {
-          fill: greenyellow;
-        }
-
-        .asm-jaw__tooth-label {
-          font-weight: bold;
-        }
-      }
     }
 
     &-back {
@@ -55,14 +45,35 @@
       &-highlight {
         fill: #fff;
       }
+    }
 
-      &:hover {
+    &:hover {
+      font-weight: bold;
+
+      &.asm-jaw__tooth-back {
         .asm-jaw__tooth-back-highlight {
           fill: greenyellow;
         }
+      }
 
-        .asm-jaw__tooth-label {
-          font-weight: bold;
+      &.asm-jaw__tooth-front {
+        .asm-jaw__tooth-front-shadow {
+          fill: greenyellow;
+        }
+      }
+    }
+
+    &--selected {
+
+      &.asm-jaw__tooth-back {
+        .asm-jaw__tooth-back-highlight {
+          fill: hotpink;
+        }
+      }
+
+      &.asm-jaw__tooth-front {
+        .asm-jaw__tooth-front-shadow {
+          fill: hotpink;
         }
       }
     }

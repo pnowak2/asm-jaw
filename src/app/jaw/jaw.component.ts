@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'asm-jaw',
@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jaw.component.scss']
 })
 export class JawComponent implements OnInit {
-
-  condition = true;
+  @Output() selected = new EventEmitter<any>();
 
   constructor() { }
 
