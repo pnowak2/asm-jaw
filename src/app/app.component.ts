@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Tooth } from './jaw/tooth.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   teeth: Array<Tooth> = [
@@ -20,6 +21,14 @@ export class AppComponent {
 
   onToothToggle(tooth: Tooth) {
     console.log('toggled tooth', tooth);
+  }
+
+  onToothMouseOver(tooth: Tooth) {
+    console.log('mouse overed tooth', tooth);
+  }
+
+  onToothMouseOut(tooth: Tooth) {
+    console.log('mouse outed tooth', tooth);
   }
 
   onDataChange() {

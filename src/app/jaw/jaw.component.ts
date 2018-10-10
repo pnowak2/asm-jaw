@@ -12,7 +12,7 @@ export class JawComponent implements OnInit {
   @Input()
   set data(data: Array<Tooth>) {
     this.teeth = this.teeth.map(tooth => {
-      return data.find(to => to.id === tooth.id) || tooth;
+      return (data || []).find(item => item.id === tooth.id) || tooth;
     });
 
     // this.teeth = this.teeth.map(tooth => ({
@@ -51,11 +51,13 @@ export class JawComponent implements OnInit {
   }
 
   onToothMouseOver(id: number) {
-    this.toothMouseOver.next(null);
+    const tooth = this.getTooth(id);
+    this.toothMouseOver.next(tooth);
   }
 
   onToothMouseOut(id: number) {
-    this.toothMouseOut.next(null);
+    const tooth = this.getTooth(id);
+    this.toothMouseOut.next(tooth);
   }
 
   getTooth(id: number): Tooth {

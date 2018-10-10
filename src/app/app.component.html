@@ -1,3 +1,7 @@
-<asm-jaw [data]="teeth" (toothSeletionToggle)="onToothToggle($event)"></asm-jaw>
+<asm-jaw [data]="teeth" 
+         [isReadOnly]="false"
+         (toothSeletionToggle)="onToothToggle($event)"
+         (toothMouseOver)="onToothMouseOver($event)"
+         (toothMouseOut)="onToothMouseOut($event)"></asm-jaw>
 
 <button (click)="onDataChange()">Change data</button>
