@@ -1,17 +1,19 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { Tooth } from './jaw/tooth.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   teeth: Array<Tooth> = [
     {
       id: 28,
-      selected: true
+      selected: true,
+      styleClass: 'testing'
     },
     {
       id: 26,
