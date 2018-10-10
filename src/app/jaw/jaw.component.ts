@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JawComponent implements OnInit {
 
+  condition = true;
+
   constructor() { }
 
   ngOnInit() {

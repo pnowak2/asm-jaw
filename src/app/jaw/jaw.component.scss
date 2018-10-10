@@ -1,37 +1,70 @@
-.cls-1 {
-  fill: #ededed;
-}
-
-.cls-2 {
-  fill: #fdb1b7;
-}
-
-.cls-3, .cls-6 {
-  fill: #f3858c;
-}
-
-.cls-4 {
-  font-size: 12px;
-  fill: #4a4a4a;
-}
-
-.cls-4, .cls-6 {
+.asm-jaw {
   font-family: Arial;
-  font-weight: bold;
-}
+  user-select: none;
 
-.cls-5 {
-  letter-spacing: -0.07em;
-}
+  &__outline {
+    fill: #ededed;
+  }
 
-.cls-6 {
-  font-size: 20px;
-}
+  &__gums {
+    fill: #fdb1b7;
+  }
 
-.cls-7 {
-  letter-spacing: -0.02em;
-}
+  &__gums-shadow, &__text {
+    fill: #f3858c;
+  }
 
-.cls-8 {
-  fill: #fff;
+  &__text {
+    fill: #f3858c;
+    font-size: 20px;
+  }
+
+  &__tooth {
+    cursor: pointer;
+
+    &-label {
+      font-size: 12px;
+      fill: #4a4a4a;
+    }
+
+    &-front {
+      &-shadow {
+        fill: #ededed;
+      }
+
+      &-highlight {
+        fill: #fff;
+      }
+      
+      &:hover {
+        .asm-jaw__tooth-front-shadow {
+          fill: greenyellow;
+        }
+
+        .asm-jaw__tooth-label {
+          font-weight: bold;
+        }
+      }
+    }
+
+    &-back {
+      &-shadow {
+        fill: #ededed;
+      }
+
+      &-highlight {
+        fill: #fff;
+      }
+
+      &:hover {
+        .asm-jaw__tooth-back-highlight {
+          fill: greenyellow;
+        }
+
+        .asm-jaw__tooth-label {
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
