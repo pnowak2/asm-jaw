@@ -21,6 +21,7 @@
 
   &__tooth {
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 
     &-label {
       font-size: 12px;
@@ -48,34 +49,61 @@
     }
 
     &:hover {
-      font-weight: bold;
+      font-weight: normal;
+      transform: scale(1.03);
+      transform-origin: 50% 50%;
 
       &.asm-jaw__tooth-back {
         .asm-jaw__tooth-back-highlight {
-          fill: greenyellow;
+          fill: khaki;
         }
       }
 
       &.asm-jaw__tooth-front {
         .asm-jaw__tooth-front-shadow {
-          fill: greenyellow;
+          fill: khaki;
         }
       }
     }
 
     &--selected {
-
       &.asm-jaw__tooth-back {
         .asm-jaw__tooth-back-highlight {
-          fill: hotpink;
+          fill: skyblue !important;
         }
       }
 
       &.asm-jaw__tooth-front {
         .asm-jaw__tooth-front-shadow {
-          fill: hotpink;
+          fill: skyblue !important;
         }
       }
+    }
+
+    &--reimbursed {
+      &.asm-jaw__tooth-back {
+        .asm-jaw__tooth-back-highlight {
+          fill: green;
+        }
+        .asm-jaw__tooth-label {
+          fill: white;
+        }
+      }
+
+      &.asm-jaw__tooth-front {
+        .asm-jaw__tooth-front-shadow {
+          fill: green;
+        }
+        .asm-jaw__tooth-label {
+          fill: white;
+        }
+      }
+    }
+  }
+
+  &--readonly {
+    .asm-jaw__tooth {
+      cursor: default !important;
     }
   }
 }

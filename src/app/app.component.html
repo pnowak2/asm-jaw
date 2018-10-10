@@ -1,1 +1,3 @@
-<asm-jaw (selected)="onSelected($event)"></asm-jaw>
+<asm-jaw [data]="teeth" (toothSeletionToggle)="onToothToggle($event)"></asm-jaw>
+
+<button (click)="onDataChange()">Change data</button>
