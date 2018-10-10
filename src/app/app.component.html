@@ -1,7 +1,9 @@
-<asm-jaw [data]="teeth" 
+<asm-jaw ([data])="teeth" 
          [isReadOnly]="false"
          (toothSeletionToggle)="onToothToggle($event)"
          (toothMouseOver)="onToothMouseOver($event)"
          (toothMouseOut)="onToothMouseOut($event)"></asm-jaw>
 
 <button (click)="onDataChange()">Change data</button>
+
+{{ teeth }}
