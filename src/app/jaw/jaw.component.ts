@@ -25,13 +25,13 @@ export class JawComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     const changedTeeth = changes['teeth'].currentValue as Array<Tooth>;
 
-    this._teeth = this.mergeTeeth(
+    this._teeth = this.mergeToothArrays(
       this.getDefaultTeethArray(),
       changedTeeth
     );
 
     this.teethChange.next(
-      this.getModifiedTeeth()
+      this.getModifiedTeeth(this._teeth)
     );
   }
 
@@ -42,7 +42,7 @@ export class JawComponent implements OnChanges {
     if (tooth && !this.isReadOnly) {
       tooth.selected = !tooth.selected;
       this.teethChange.next(
-        this.getModifiedTeeth()
+        this.getModifiedTeeth(this._teeth)
       );
     }
   }
@@ -82,11 +82,11 @@ export class JawComponent implements OnChanges {
     return (tooth.selected || !!tooth.styleClass);
   }
 
-  private getModifiedTeeth(): Array<Tooth> {
-    return this._teeth.filter(this.isModifiedTooth);
+  private getModifiedTeeth(teeth: Array<Tooth>): Array<Tooth> {
+    return teeth.filter(this.isModifiedTooth);
   }
 
-  private mergeTeeth(src: Array<Tooth>, dst: Array<Tooth>): Array<Tooth> {
+  private mergeToothArrays(src: Array<Tooth>, dst: Array<Tooth>): Array<Tooth> {
     return src.map(tooth => {
       return (dst || []).find(t => t.id === tooth.id) || tooth;
     });
