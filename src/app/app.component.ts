@@ -42,7 +42,9 @@ export class AppComponent {
     this.teeth = [
       { id: 11, styleClass: 'asm-tooth--rejected' },
       { id: 15, styleClass: 'asm-tooth--reimbursed', selected: true },
-      { id: 18, styleClass: 'asm-tooth--reimbursed' }
+      { id: 18, styleClass: 'asm-tooth--reimbursed' },
+      { id: 43, styleClass: 'asm-tooth--reimbursed' },
+      { id: 36, styleClass: 'asm-tooth--rejected' },
     ];
   }
 }

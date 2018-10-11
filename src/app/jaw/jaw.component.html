@@ -57,7 +57,7 @@
         (mouseover)="onToothMouseOver(23)"
         (mouseout)="onToothMouseOut(23)"
         [class.asm-jaw__tooth--selected]="getTooth(23)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M142.33,43.07c-3.64,3.53-4.63,9.15-2.19,12.5s8.09,4.14,12.57,1.76l7.75-4.12a7.79,7.79,0,0,0,2.72-11.77L160.67,38a7.79,7.79,0,0,0-12-1Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(23)?.styleClass" d="M142.33,43.07c-3.64,3.53-4.63,9.15-2.19,12.5s8.09,4.14,12.57,1.76l7.75-4.12a7.79,7.79,0,0,0,2.72-11.77L160.67,38a7.79,7.79,0,0,0-12-1Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(23)?.styleClass" d="M145.29,42.8c-3.58,3.47-4.92,8.51-3,11.18s7.15,3,11.55.61l3.2-1.7a7.88,7.88,0,1,0-9.18-12.61Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(145.13 50.84)">23</text>
       </g>
@@ -66,7 +66,7 @@
         (mouseover)="onToothMouseOver(22)"
         (mouseout)="onToothMouseOut(22)"
         [class.asm-jaw__tooth--selected]="getTooth(22)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M125.68,32.2c-2.09,4.62-.95,10.21,2.54,12.43s9,.88,12.34-3l5.7-6.67a7.79,7.79,0,0,0-1.79-12l-3.59-2.28a7.79,7.79,0,0,0-11.58,3.45Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(22)?.styleClass" d="M125.68,32.2c-2.09,4.62-.95,10.21,2.54,12.43s9,.88,12.34-3l5.7-6.67a7.79,7.79,0,0,0-1.79-12l-3.59-2.28a7.79,7.79,0,0,0-11.58,3.45Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(22)?.styleClass" d="M128.33,30.86c-2.06,4.55-1.46,9.72,1.33,11.49s7.73.13,11-3.67L143,35.94a7.88,7.88,0,1,0-13.16-8.37Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(129.78 35.76)">22</text>
       </g>
@@ -75,7 +75,7 @@
         (mouseover)="onToothMouseOver(21)"
         (mouseout)="onToothMouseOut(21)"
         [class.asm-jaw__tooth--selected]="getTooth(21)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M106.9,27c-.35,5.06,2.67,9.9,6.72,10.76s8.78-2.33,10.52-7.09l3-8.24a7.79,7.79,0,0,0-5.85-10.58L117.16,11a7.79,7.79,0,0,0-9.65,7.27Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(21)?.styleClass" d="M106.9,27c-.35,5.06,2.67,9.9,6.72,10.76s8.78-2.33,10.52-7.09l3-8.24a7.79,7.79,0,0,0-5.85-10.58L117.16,11a7.79,7.79,0,0,0-9.65,7.27Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(21)?.styleClass" d="M108.93,24.84c-.34,5,2,9.62,5.26,10.31s7.29-2.58,9-7.27l1.24-3.4a7.88,7.88,0,1,0-15.26-3.25Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(110.61 27.56)">21</text>
       </g>
@@ -129,7 +129,7 @@
         (mouseover)="onToothMouseOver(13)"
         (mouseout)="onToothMouseOut(13)"
         [class.asm-jaw__tooth--selected]="getTooth(13)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M69.35,43.07C73,46.6,74,52.22,71.54,55.56S63.45,59.7,59,57.32l-7.75-4.12A7.79,7.79,0,0,1,48.5,41.43L51,38a7.79,7.79,0,0,1,12-1Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(13)?.styleClass" d="M69.35,43.07C73,46.6,74,52.22,71.54,55.56S63.45,59.7,59,57.32l-7.75-4.12A7.79,7.79,0,0,1,48.5,41.43L51,38a7.79,7.79,0,0,1,12-1Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(13)?.styleClass" d="M66.39,42.8c3.58,3.47,4.92,8.51,3,11.18s-7.15,3-11.55.61l-3.2-1.7a7.88,7.88,0,1,1,9.18-12.61Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(52.2 50.84)">13</text>
       </g>
@@ -138,7 +138,7 @@
         (mouseover)="onToothMouseOver(12)"
         (mouseout)="onToothMouseOut(12)"
         [class.asm-jaw__tooth--selected]="getTooth(12)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M86,32.2c2.09,4.62.95,10.21-2.54,12.43s-9,.88-12.34-3L65.42,35a7.79,7.79,0,0,1,1.79-12l3.59-2.28a7.79,7.79,0,0,1,11.58,3.45Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(12)?.styleClass" d="M86,32.2c2.09,4.62.95,10.21-2.54,12.43s-9,.88-12.34-3L65.42,35a7.79,7.79,0,0,1,1.79-12l3.59-2.28a7.79,7.79,0,0,1,11.58,3.45Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(12)?.styleClass" d="M83.35,30.86c2.06,4.55,1.46,9.72-1.33,11.49s-7.73.13-11-3.67l-2.35-2.75a7.88,7.88,0,1,1,13.16-8.37Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(68.55 35.76)">12</text>
       </g>
@@ -147,7 +147,7 @@
         (mouseover)="onToothMouseOver(11)"
         (mouseout)="onToothMouseOut(11)"
         [class.asm-jaw__tooth--selected]="getTooth(11)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M104.78,27c.35,5.06-2.67,9.9-6.72,10.76s-8.78-2.33-10.52-7.09l-3-8.24a7.79,7.79,0,0,1,5.85-10.58L94.52,11a7.79,7.79,0,0,1,9.65,7.27Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(11)?.styleClass" d="M104.78,27c.35,5.06-2.67,9.9-6.72,10.76s-8.78-2.33-10.52-7.09l-3-8.24a7.79,7.79,0,0,1,5.85-10.58L94.52,11a7.79,7.79,0,0,1,9.65,7.27Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(11)?.styleClass" d="M102.75,24.84c.34,5-2,9.62-5.26,10.31s-7.29-2.58-9-7.27l-1.24-3.4a7.88,7.88,0,1,1,15.26-3.25Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(88.16 27.56)"><tspan class="cls-5">11</tspan></text>
       </g>
@@ -208,7 +208,7 @@
         (mouseover)="onToothMouseOver(43)"
         (mouseout)="onToothMouseOut(43)"
         [class.asm-jaw__tooth--selected]="getTooth(43)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M69.35,338.24c3.64-3.53,4.63-9.15,2.19-12.5S63.45,321.6,59,324l-7.75,4.12a7.79,7.79,0,0,0-2.72,11.77l2.5,3.44a7.79,7.79,0,0,0,12,1Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(43)?.styleClass" d="M69.35,338.24c3.64-3.53,4.63-9.15,2.19-12.5S63.45,321.6,59,324l-7.75,4.12a7.79,7.79,0,0,0-2.72,11.77l2.5,3.44a7.79,7.79,0,0,0,12,1Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(43)?.styleClass" d="M66.39,338.51c3.58-3.47,4.92-8.51,3-11.18s-7.15-3-11.55-.61l-3.2,1.7A7.88,7.88,0,1,0,63.79,341Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(53.2 338.86)">43</text>
       </g>
@@ -217,7 +217,7 @@
         (mouseover)="onToothMouseOver(42)"
         (mouseout)="onToothMouseOut(42)"
         [class.asm-jaw__tooth--selected]="getTooth(42)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M86,349.1c2.09-4.62.95-10.21-2.54-12.43s-9-.88-12.34,3l-5.7,6.67a7.79,7.79,0,0,0,1.79,12l3.59,2.28a7.79,7.79,0,0,0,11.58-3.45Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(42)?.styleClass" d="M86,349.1c2.09-4.62.95-10.21-2.54-12.43s-9-.88-12.34,3l-5.7,6.67a7.79,7.79,0,0,0,1.79,12l3.59,2.28a7.79,7.79,0,0,0,11.58-3.45Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(42)?.styleClass" d="M83.35,350.44c2.06-4.55,1.46-9.72-1.33-11.49s-7.73-.13-11,3.67l-2.35,2.75a7.88,7.88,0,1,0,13.16,8.37Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(68.55 352.94)">42</text>
       </g>
@@ -226,7 +226,7 @@
         (mouseover)="onToothMouseOver(41)"
         (mouseout)="onToothMouseOut(41)"
         [class.asm-jaw__tooth--selected]="getTooth(41)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M104.78,354.28c.35-5.06-2.67-9.9-6.72-10.76s-8.78,2.33-10.52,7.09l-3,8.24a7.79,7.79,0,0,0,5.85,10.58l4.16.89a7.79,7.79,0,0,0,9.65-7.27Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(41)?.styleClass" d="M104.78,354.28c.35-5.06-2.67-9.9-6.72-10.76s-8.78,2.33-10.52,7.09l-3,8.24a7.79,7.79,0,0,0,5.85,10.58l4.16.89a7.79,7.79,0,0,0,9.65-7.27Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(41)?.styleClass" d="M102.75,356.46c.34-5-2-9.62-5.26-10.31s-7.29,2.58-9,7.27l-1.24,3.4a7.88,7.88,0,1,0,15.26,3.25Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(88.72 361.15)">41</text>
       </g>
@@ -280,7 +280,7 @@
         (mouseover)="onToothMouseOver(33)"
         (mouseout)="onToothMouseOut(33)"
         [class.asm-jaw__tooth--selected]="getTooth(33)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M142.33,338.24c-3.64-3.53-4.63-9.15-2.19-12.5s8.09-4.14,12.57-1.76l7.75,4.12a7.79,7.79,0,0,1,2.72,11.77l-2.5,3.44a7.79,7.79,0,0,1-12,1Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(33)?.styleClass" d="M142.33,338.24c-3.64-3.53-4.63-9.15-2.19-12.5s8.09-4.14,12.57-1.76l7.75,4.12a7.79,7.79,0,0,1,2.72,11.77l-2.5,3.44a7.79,7.79,0,0,1-12,1Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(33)?.styleClass" d="M145.29,338.51c-3.58-3.47-4.92-8.51-3-11.18s7.15-3,11.55-.61l3.2,1.7A7.88,7.88,0,1,1,147.89,341Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(145.13 338.86)">33</text>
       </g>
@@ -289,7 +289,7 @@
         (mouseover)="onToothMouseOver(32)"
         (mouseout)="onToothMouseOut(32)"
         [class.asm-jaw__tooth--selected]="getTooth(32)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M125.68,349.1c-2.09-4.62-.95-10.21,2.54-12.43s9-.88,12.34,3l5.7,6.67a7.79,7.79,0,0,1-1.79,12l-3.59,2.28a7.79,7.79,0,0,1-11.58-3.45Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(32)?.styleClass" d="M125.68,349.1c-2.09-4.62-.95-10.21,2.54-12.43s9-.88,12.34,3l5.7,6.67a7.79,7.79,0,0,1-1.79,12l-3.59,2.28a7.79,7.79,0,0,1-11.58-3.45Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(32)?.styleClass" d="M128.33,350.44c-2.06-4.55-1.46-9.72,1.33-11.49s7.73-.13,11,3.67l2.35,2.75a7.88,7.88,0,1,1-13.16,8.37Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(129.78 352.94)">32</text>
       </g>
@@ -298,7 +298,7 @@
         (mouseover)="onToothMouseOver(31)"
         (mouseout)="onToothMouseOut(31)"
         [class.asm-jaw__tooth--selected]="getTooth(31)?.selected">
-        <path class="asm-jaw__tooth-front-highlight" d="M106.9,354.28c-.35-5.06,2.67-9.9,6.72-10.76s8.78,2.33,10.52,7.09l3,8.24a7.79,7.79,0,0,1-5.85,10.58l-4.16.89a7.79,7.79,0,0,1-9.65-7.27Z"/>
+        <path class="asm-jaw__tooth-front-highlight" [ngClass]="getTooth(31)?.styleClass" d="M106.9,354.28c-.35-5.06,2.67-9.9,6.72-10.76s8.78,2.33,10.52,7.09l3,8.24a7.79,7.79,0,0,1-5.85,10.58l-4.16.89a7.79,7.79,0,0,1-9.65-7.27Z"/>
         <path class="asm-jaw__tooth-front-shadow" [ngClass]="getTooth(31)?.styleClass" d="M108.93,356.46c-.34-5,2-9.62,5.26-10.31s7.29,2.58,9,7.27l1.24,3.4a7.88,7.88,0,1,1-15.26,3.25Z"/>
         <text class="asm-jaw__tooth-label" transform="translate(110.62 361.15)">31</text>
       </g>

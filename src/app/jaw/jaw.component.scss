@@ -48,6 +48,7 @@ $asm-jaw__tooth-selected-label-color: #fff;
 
       &-highlight {
         fill: $asm-jaw__tooth-front-highlight-color;
+        stroke: white;
       }
     }
 
@@ -74,6 +75,9 @@ $asm-jaw__tooth-selected-label-color: #fff;
       }
 
       &.asm-jaw__tooth-front {
+        .asm-jaw__tooth-front-highlight {
+          fill: $asm-jaw__tooth-hover-color;
+        }
         .asm-jaw__tooth-front-shadow {
           fill: $asm-jaw__tooth-hover-color;
         }
@@ -91,6 +95,9 @@ $asm-jaw__tooth-selected-label-color: #fff;
       }
 
       &.asm-jaw__tooth-front {
+        .asm-jaw__tooth-front-highlight {
+          fill: $asm-jaw__tooth-selected-color !important;
+        }
         .asm-jaw__tooth-front-shadow {
           fill: $asm-jaw__tooth-selected-color !important;
         }
