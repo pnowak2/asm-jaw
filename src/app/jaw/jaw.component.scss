@@ -48,7 +48,7 @@ $asm-jaw__tooth-selected-label-color: #fff;
 
       &-highlight {
         fill: $asm-jaw__tooth-front-highlight-color;
-        stroke: white;
+        stroke: $asm-jaw__tooth-front-highlight-color;
       }
     }
 
