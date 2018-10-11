@@ -8,17 +8,13 @@ import { Tooth } from './tooth.model';
 })
 export class JawComponent implements OnInit {
   @Input() isReadOnly = false;
+  @Input() topJawLabel = 'TOP';
 
   @Input()
   set data(data: Array<Tooth>) {
     this.teeth = this.teeth.map(tooth => {
       return (data || []).find(item => item.id === tooth.id) || tooth;
     });
-
-    // this.teeth = this.teeth.map(tooth => ({
-    //   ...tooth,
-    //   ...data.find(to => to.id === tooth.id)
-    // }));
   }
 
   @Output() toothSeletionToggle = new EventEmitter<Tooth>();

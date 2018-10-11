@@ -12,15 +12,15 @@ export class AppComponent {
   teeth: Array<Tooth> = [
     {
       id: 28,
-      styleClass: 'testing'
+      styleClass: 'rejected'
     },
     {
       id: 26,
-      styleClass: 'testing'
+      styleClass: 'reimbursed'
     },
     {
       id: 21,
-      styleClass: 'testing'
+      styleClass: 'reimbursed'
     }
   ];
 
@@ -43,6 +43,10 @@ export class AppComponent {
       },
       {
         id: 26
+      },
+      {
+        id: 21,
+        styleClass: 'rejected'
       }
     ];
   }

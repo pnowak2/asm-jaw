@@ -1,3 +1,7 @@
-.testing {
-  fill: pink !important;
+.reimbursed {
+  fill: darkseagreen !important;
+}
+
+.rejected {
+  fill: lightcoral !important;
 }
