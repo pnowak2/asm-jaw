@@ -28,6 +28,10 @@ export class JawComponent implements OnChanges {
     this._teeth = this.getDefaultTeethArray().map(tooth => {
       return (currentTeeth || []).find(item => item.id === tooth.id) || tooth;
     });
+
+    this.teethChange.next(
+      this._teeth.filter(this.isModifiedTooth)
+    );
   }
 
   onToothClick(id: number) {

@@ -1,18 +1,31 @@
+$asm-jaw__outline-color: #ededed;
+$asm-jaw__gums-color: #fdb1b7;
+$asm-jaw__gums-shadow-color: #f3858c;
+$asm-jaw__tooth-text-color: #4a4a4a;
+$asm-jaw__tooth-text-size: 12px;
+$asm-jaw__tooth-front-highlight-color: #fff;
+$asm-jaw__tooth-front-shadow-color: #ededed;
+$asm-jaw__tooth-back-highlight-color: #fff;
+$asm-jaw__tooth-back-shadow-color: #ededed;
+$asm-jaw__tooth-hover-color: khaki;
+$asm-jaw__tooth-selected-color: #4a4a4a;
+$asm-jaw__tooth-selected-label-color: #fff;
+
 .asm-jaw {
   font-family: Arial;
   font-weight: normal; 
   user-select: none;
 
   &__outline {
-    fill: #ededed;
+    fill: $asm-jaw__outline-color;
   }
 
   &__gums {
-    fill: #fdb1b7;
+    fill: $asm-jaw__gums-color;
   }
 
   &__gums-shadow, &__text {
-    fill: #f3858c;
+    fill: $asm-jaw__gums-shadow-color;
   }
 
   &__text {
@@ -24,27 +37,27 @@
     transition: all 0.2s ease-in-out;
 
     &-label {
-      font-size: 12px;
-      fill: #4a4a4a;
+      font-size: $asm-jaw__tooth-text-size;
+      fill: $asm-jaw__tooth-text-color;
     }
 
     &-front {
       &-shadow {
-        fill: #ededed;
+        fill: $asm-jaw__tooth-front-shadow-color;
       }
 
       &-highlight {
-        fill: #fff;
+        fill: $asm-jaw__tooth-front-highlight-color;
       }
     }
 
     &-back {
       &-shadow {
-        fill: #ededed;
+        fill: $asm-jaw__tooth-back-shadow-color;
       }
 
       &-highlight {
-        fill: #fff;
+        fill: $asm-jaw__tooth-back-highlight-color;
       }
     }
 
@@ -56,13 +69,13 @@
 
       &.asm-jaw__tooth-back {
         .asm-jaw__tooth-back-highlight {
-          fill: khaki;
+          fill: $asm-jaw__tooth-hover-color;
         }
       }
 
       &.asm-jaw__tooth-front {
         .asm-jaw__tooth-front-shadow {
-          fill: khaki;
+          fill: $asm-jaw__tooth-hover-color;
         }
       }
     }
@@ -70,39 +83,19 @@
     &--selected {
       &.asm-jaw__tooth-back {
         .asm-jaw__tooth-back-highlight {
-          fill: #4a4a4a !important;
+          fill: $asm-jaw__tooth-selected-color !important;
         }
         .asm-jaw__tooth-label {
-          fill: white !important;
+          fill: $asm-jaw__tooth-selected-label-color !important;
         }
       }
 
       &.asm-jaw__tooth-front {
         .asm-jaw__tooth-front-shadow {
-          fill: #4a4a4a !important;
+          fill: $asm-jaw__tooth-selected-color !important;
         }
         .asm-jaw__tooth-label {
-          fill: white !important;
-        }
-      }
-    }
-
-    &--reimbursed {
-      &.asm-jaw__tooth-back {
-        .asm-jaw__tooth-back-highlight {
-          fill: green;
-        }
-        .asm-jaw__tooth-label {
-          fill: white;
-        }
-      }
-
-      &.asm-jaw__tooth-front {
-        .asm-jaw__tooth-front-shadow {
-          fill: green;
-        }
-        .asm-jaw__tooth-label {
-          fill: white;
+          fill: $asm-jaw__tooth-selected-label-color !important;
         }
       }
     }
