@@ -1,7 +1,7 @@
 .asm-tooth--reimbursed {
-  fill: darkseagreen !important;
+  fill: #90d090 !important;
 }
 
 .asm-tooth--rejected {
-  fill: indianred !important;
+  fill: #ff9999 !important;
 }
