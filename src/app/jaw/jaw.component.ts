@@ -9,36 +9,33 @@ import { Tooth } from './tooth.model';
 export class JawComponent implements OnInit {
   @Input() isReadOnly = false;
   @Input() topJawLabel = 'TOP';
-
-  @Input()
-  set data(data: Array<Tooth>) {
-    this.teeth = this.teeth.map(tooth => {
-      return (data || []).find(item => item.id === tooth.id) || tooth;
-    });
+  @Input() set teeth(teeth: Array<Tooth>) {
+    this._teeth = this.getDefaultTeethArray()
+      .map(tooth => {
+        return (teeth || []).find(item => item.id === tooth.id) || tooth;
+      });
   }
 
   @Output() toothSeletionToggle = new EventEmitter<Tooth>();
+  @Output() toothClick = new EventEmitter<Tooth>();
   @Output() toothMouseOver = new EventEmitter<Tooth>();
   @Output() toothMouseOut = new EventEmitter<Tooth>();
 
-  private teeth: Array<Tooth>;
-  private toothNumbers = [
-    11, 12, 13, 14, 15, 16, 17, 18,
-    21, 22, 23, 24, 25, 26, 27, 28,
-    31, 32, 33, 34, 35, 36, 37, 38,
-    41, 42, 43, 44, 45, 46, 47, 48,
-  ];
+  private _teeth: Array<Tooth>;
 
   constructor() {
-    this.teeth = this.toothNumbers.map((id) => ({ id }));
+    this._teeth = this.getDefaultTeethArray();
   }
 
   ngOnInit() {
   }
 
   onToothClick(id: number) {
+    const tooth = this.getTooth(id);
+
+    this.toothClick.next(tooth);
+
     if (!this.isReadOnly) {
-      const tooth = this.getTooth(id);
       if (tooth) {
         tooth.selected = !tooth.selected;
         this.toothSeletionToggle.next(tooth);
@@ -57,7 +54,18 @@ export class JawComponent implements OnInit {
   }
 
   getTooth(id: number): Tooth {
-    return this.teeth.find(tooth => tooth.id === id);
+    return (this._teeth || []).find(tooth => tooth.id === id);
+  }
+
+  getDefaultTeethArray(): Array<Tooth> {
+    const toothNumbers = [
+      11, 12, 13, 14, 15, 16, 17, 18,
+      21, 22, 23, 24, 25, 26, 27, 28,
+      31, 32, 33, 34, 35, 36, 37, 38,
+      41, 42, 43, 44, 45, 46, 47, 48,
+    ];
+
+    return toothNumbers.map((id) => ({ id }));
   }
 
 }

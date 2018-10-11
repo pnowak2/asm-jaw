@@ -19,6 +19,11 @@ export class AppComponent {
   toothOver: Tooth;
   toothOut: Tooth;
   toothSelected: Tooth;
+  toothClicked: Tooth;
+
+  onToothClick(tooth: Tooth) {
+    this.toothClicked = tooth;
+  }
 
   onToothToggle(tooth: Tooth) {
     this.toothSelected = tooth;
@@ -30,5 +35,13 @@ export class AppComponent {
 
   onToothMouseOut(tooth: Tooth) {
     this.toothOut = tooth;
+  }
+
+  onInitTeeth() {
+    this.teeth = [
+      { id: 11, styleClass: 'asm-tooth--rejected' },
+      { id: 15, styleClass: 'asm-tooth--reimbursed', selected: true },
+      { id: 18, styleClass: 'asm-tooth--reimbursed' }
+    ];
   }
 }

@@ -1,6 +1,7 @@
-<asm-jaw [data]="teeth" 
+<asm-jaw [teeth]="teeth" 
          topJawLabel="Supérieure"
          [isReadOnly]="false"
+         (toothClick)="onToothClick($event)"
          (toothSeletionToggle)="onToothToggle($event)"
          (toothMouseOver)="onToothMouseOver($event)"
          (toothMouseOut)="onToothMouseOut($event)">
@@ -8,8 +9,11 @@
 
 <!-- Diagnostics debug -->
 
+<button (click)="onInitTeeth()">Init teeth</button>
+
 <p>tooth over: {{ toothOver | json }}</p>
 <p>tooth out: {{ toothOut | json }}</p>
+<p>tooth click: {{ toothClicked | json }}</p>
 <p>tooth toggle: {{ toothSelected | json }}</p>
 
 <!-- <asm-jaw [teeth]="teeth" 
