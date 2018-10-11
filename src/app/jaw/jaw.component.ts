@@ -20,6 +20,7 @@ export class JawComponent implements OnInit {
   @Output() toothClick = new EventEmitter<Tooth>();
   @Output() toothMouseOver = new EventEmitter<Tooth>();
   @Output() toothMouseOut = new EventEmitter<Tooth>();
+  @Output() teethChange = new EventEmitter<Array<Tooth>>();
 
   private _teeth: Array<Tooth>;
 
@@ -39,6 +40,8 @@ export class JawComponent implements OnInit {
       if (tooth) {
         tooth.selected = !tooth.selected;
         this.toothSeletionToggle.next(tooth);
+        this.teethChange.next(this._teeth);
+        console.log(this.teeth);
       }
     }
   }
