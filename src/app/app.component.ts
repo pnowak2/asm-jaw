@@ -5,7 +5,8 @@ import { Tooth } from './jaw/tooth.model';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   teeth: Array<Tooth> = [
@@ -18,15 +19,15 @@ export class AppComponent {
 
   toothOver: Tooth;
   toothOut: Tooth;
-  toothSelected: Tooth;
+  teethChange: Array<Tooth>;
   toothClicked: Tooth;
 
   onToothClick(tooth: Tooth) {
     this.toothClicked = tooth;
   }
 
-  onToothToggle(tooth: Tooth) {
-    this.toothSelected = tooth;
+  onTeethChange(teeth: Array<Tooth>) {
+    this.teethChange = teeth;
   }
 
   onToothMouseOver(tooth: Tooth) {

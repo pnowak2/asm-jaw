@@ -1,8 +1,8 @@
 <asm-jaw [(teeth)]="teeth" 
          topJawLabel="Supérieure"
          [isReadOnly]="false"
+         (teethChange)="onTeethChange($event)"
          (toothClick)="onToothClick($event)"
-         (toothSeletionToggle)="onToothToggle($event)"
          (toothMouseOver)="onToothMouseOver($event)"
          (toothMouseOut)="onToothMouseOut($event)">
 </asm-jaw>
@@ -11,8 +11,8 @@
 
 <button (click)="onInitTeeth()">Init teeth</button>
 
-<p>teeth: {{ teeth | json }}</p>
+<p>teeth {{ teeth.length }}: {{ teeth | json }}</p>
+<p>teeth change {{ teethChange?.length }}: {{ teethChange | json }}</p>
 <p>tooth over: {{ toothOver | json }}</p>
 <p>tooth out: {{ toothOut | json }}</p>
 <p>tooth click: {{ toothClicked | json }}</p>
-<p>tooth toggle: {{ toothSelected | json }}</p>

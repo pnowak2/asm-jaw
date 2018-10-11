@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, ViewChild } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Tooth } from './tooth.model';
 
 @Component({
@@ -6,21 +6,15 @@ import { Tooth } from './tooth.model';
   templateUrl: './jaw.component.html',
   styleUrls: ['./jaw.component.scss']
 })
-export class JawComponent implements OnInit {
+export class JawComponent implements OnChanges {
   @Input() isReadOnly = false;
   @Input() topJawLabel = 'TOP';
-  @Input() set teeth(teeth: Array<Tooth>) {
-    this._teeth = this.getDefaultTeethArray()
-      .map(tooth => {
-        return (teeth || []).find(item => item.id === tooth.id) || tooth;
-      });
-  }
+  @Input() teeth: Array<Tooth>;
 
-  @Output() toothSeletionToggle = new EventEmitter<Tooth>();
+  @Output() teethChange = new EventEmitter<Array<Tooth>>();
   @Output() toothClick = new EventEmitter<Tooth>();
   @Output() toothMouseOver = new EventEmitter<Tooth>();
   @Output() toothMouseOut = new EventEmitter<Tooth>();
-  @Output() teethChange = new EventEmitter<Array<Tooth>>();
 
   private _teeth: Array<Tooth>;
 
@@ -28,39 +22,43 @@ export class JawComponent implements OnInit {
     this._teeth = this.getDefaultTeethArray();
   }
 
-  ngOnInit() {
+  ngOnChanges(changes: SimpleChanges) {
+    const currentTeeth = changes['teeth'].currentValue as Array<Tooth>;
+
+    this._teeth = this.getDefaultTeethArray().map(tooth => {
+      return (currentTeeth || []).find(item => item.id === tooth.id) || tooth;
+    });
   }
 
   onToothClick(id: number) {
     const tooth = this.getTooth(id);
-
     this.toothClick.next(tooth);
 
-    if (!this.isReadOnly) {
-      if (tooth) {
-        tooth.selected = !tooth.selected;
-        this.toothSeletionToggle.next(tooth);
-        this.teethChange.next(this._teeth);
-        console.log(this.teeth);
-      }
+    if (tooth && !this.isReadOnly) {
+      tooth.selected = !tooth.selected;
+      this.teethChange.next(
+        this._teeth.filter(this.isModifiedTooth)
+      );
     }
   }
 
   onToothMouseOver(id: number) {
-    const tooth = this.getTooth(id);
-    this.toothMouseOver.next(tooth);
+    this.toothMouseOver.next(
+      this.getTooth(id)
+    );
   }
 
   onToothMouseOut(id: number) {
-    const tooth = this.getTooth(id);
-    this.toothMouseOut.next(tooth);
+    this.toothMouseOut.next(
+      this.getTooth(id)
+    );
   }
 
   getTooth(id: number): Tooth {
     return (this._teeth || []).find(tooth => tooth.id === id);
   }
 
-  getDefaultTeethArray(): Array<Tooth> {
+  private getDefaultTeethArray(): Array<Tooth> {
     const toothNumbers = [
       11, 12, 13, 14, 15, 16, 17, 18,
       21, 22, 23, 24, 25, 26, 27, 28,
@@ -68,7 +66,14 @@ export class JawComponent implements OnInit {
       41, 42, 43, 44, 45, 46, 47, 48,
     ];
 
-    return toothNumbers.map((id) => ({ id }));
+    return toothNumbers.map(this.createDefaultTooth);
   }
 
+  private createDefaultTooth(id: number): Tooth {
+    return { id };
+  }
+
+  private isModifiedTooth(tooth: Tooth): boolean {
+    return (tooth.selected || !!tooth.styleClass);
+  }
 }
