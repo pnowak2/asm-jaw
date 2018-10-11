@@ -5,49 +5,30 @@ import { Tooth } from './jaw/tooth.model';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   teeth: Array<Tooth> = [
-    {
-      id: 28,
-      styleClass: 'rejected'
-    },
-    {
-      id: 26,
-      styleClass: 'reimbursed'
-    },
-    {
-      id: 21,
-      styleClass: 'reimbursed'
-    }
+    { id: 28, styleClass: 'asm-tooth--rejected' },
+    { id: 26, styleClass: 'asm-tooth--reimbursed', selected: true },
+    { id: 21, styleClass: 'asm-tooth--reimbursed' },
+    { id: 45, styleClass: 'asm-tooth--reimbursed' },
+    { id: 33, styleClass: 'asm-tooth--reimbursed' }
   ];
 
+  toothOver: Tooth;
+  toothOut: Tooth;
+  toothSelected: Tooth;
+
   onToothToggle(tooth: Tooth) {
-    console.log('toggled tooth', tooth);
+    this.toothSelected = tooth;
   }
 
   onToothMouseOver(tooth: Tooth) {
-    console.log('mouse overed tooth', tooth);
+    this.toothOver = tooth;
   }
 
   onToothMouseOut(tooth: Tooth) {
-    console.log('mouse outed tooth', tooth);
-  }
-
-  onDataChange() {
-    this.teeth = [
-      {
-        id: 28
-      },
-      {
-        id: 26
-      },
-      {
-        id: 21,
-        styleClass: 'rejected'
-      }
-    ];
+    this.toothOut = tooth;
   }
 }

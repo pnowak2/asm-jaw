@@ -1,7 +1,7 @@
-.reimbursed {
+.asm-tooth--reimbursed {
   fill: darkseagreen !important;
 }
 
-.rejected {
+.asm-tooth--rejected {
   fill: lightcoral !important;
 }

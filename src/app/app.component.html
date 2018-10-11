@@ -3,8 +3,20 @@
          [isReadOnly]="false"
          (toothSeletionToggle)="onToothToggle($event)"
          (toothMouseOver)="onToothMouseOver($event)"
-         (toothMouseOut)="onToothMouseOut($event)"></asm-jaw>
+         (toothMouseOut)="onToothMouseOut($event)">
+</asm-jaw>
 
-<button (click)="onDataChange()">Change data</button>
+<!-- Diagnostics debug -->
 
-{{ teeth }}
+<p>tooth over: {{ toothOver | json }}</p>
+<p>tooth out: {{ toothOut | json }}</p>
+<p>tooth toggle: {{ toothSelected | json }}</p>
+
+<!-- <asm-jaw [teeth]="teeth" 
+         topJawLabel="Supérieure"
+         [isReadOnly]="false"
+         (teethChanged)="onToothToggle($event)"
+         (toothClick)="onToothClick($event)"
+         (toothMouseOver)="onToothMouseOver($event)"
+         (toothMouseOut)="onToothMouseOut($event)">
+</asm-jaw> -->
