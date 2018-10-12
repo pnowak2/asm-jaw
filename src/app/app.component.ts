@@ -14,19 +14,19 @@ export class AppComponent {
   teethNumbers;
 
   onToothClick(tooth: Tooth) {
-    console.log('tooth click', tooth);
+    console.log('tooth click', tooth.id);
   }
 
   onTeethChange(teeth: Array<Tooth>) {
-    console.log('tooth change', teeth);
+    console.log('tooth change', teeth.map(t => t.id).join(','));
   }
 
   onToothMouseOver(tooth: Tooth) {
-    console.log('tooth over', tooth);
+    console.log('tooth over', tooth.id);
   }
 
   onToothMouseOut(tooth: Tooth) {
-    console.log('tooth out', tooth);
+    console.log('tooth out', tooth.id);
   }
 
   onToggleMode() {
