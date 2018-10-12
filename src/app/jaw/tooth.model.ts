@@ -4,7 +4,7 @@ export interface Tooth {
   styleClass?: string;
 }
 
-export interface ToothVM extends Tooth {
+export interface ToothSVG extends Tooth {
   isFront: boolean;
   highlightPath: string;
   shadowPath: string;
