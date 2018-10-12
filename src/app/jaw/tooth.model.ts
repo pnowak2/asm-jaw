@@ -3,3 +3,10 @@ export interface Tooth {
   selected?: boolean;
   styleClass?: string;
 }
+
+export interface ToothVM extends Tooth {
+  isFront: boolean;
+  highlightPath: string;
+  shadowPath: string;
+  labelTransform: string;
+}
