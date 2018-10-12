@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-import { Tooth } from './jaw/tooth.model';
+import { Tooth } from './jaw/model/tooth.model';
 
 @Component({
   selector: 'app-root',
@@ -57,5 +57,10 @@ export class AppComponent {
   onFrontTeeth() {
     this.teethNumbers = [
       11, 12, 13, 21, 22, 23, 31, 32, 33, 41, 42, 43];
+  }
+
+  onReset() {
+    this.teeth = [];
+    this.teethNumbers = null;
   }
 }

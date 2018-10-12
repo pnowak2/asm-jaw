@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Tooth, ToothSVG } from './tooth.model';
+import { Tooth, ToothSVG } from '../model/tooth.model';
 
 @Injectable()
 export class JawService {
 
   // tslint:disable
-  createDefaultTeethArray(teethNumbers?: Array<number>): Array<Tooth> {
-    const teethModels: Array<ToothSVG> = [
+  createDefaultTeethArray(): Array<Tooth> {
+    const teeth: Array<ToothSVG> = [
       {
         id: 11,
         isFront: true,
@@ -233,12 +233,6 @@ export class JawService {
       },
     ];
 
-    if(teethNumbers) {
-      return teethModels.filter(t => {
-        return teethNumbers.find(n => n === t.id);
-      });
-    } else {
-      return teethModels;
-    }
+    return teeth;
   }
 }

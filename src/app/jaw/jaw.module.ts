@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JawComponent } from './jaw.component';
-import { JawService } from './jaw.service';
+import { JawComponent } from './component/jaw.component';
+import { JawService } from './service/jaw.service';
 
 @NgModule({
   imports: [

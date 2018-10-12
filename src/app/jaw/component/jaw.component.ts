@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Tooth } from './tooth.model';
-import { JawService } from './jaw.service';
+import { Tooth } from '../model/tooth.model';
+import { JawService } from '../service/jaw.service';
 
 @Component({
   selector: 'asm-jaw',
@@ -55,9 +55,15 @@ export class JawComponent implements OnChanges {
   }
 
   private createTeethArray() {
-    return this.jawService.createDefaultTeethArray(
-      this.teethNumbers
-    );
+    const teeth = this.jawService.createDefaultTeethArray();
+
+    if (this.teethNumbers) {
+      return teeth.filter(t => {
+        return this.teethNumbers.find(n => n === t.id);
+      });
+    } else {
+      return teeth;
+    }
   }
 
   private isModifiedTooth(tooth: Tooth): boolean {
