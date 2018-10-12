@@ -20,21 +20,21 @@
         (click)="onToothClick(tooth)"
         (mouseover)="onToothMouseOver(tooth)"
         (mouseout)="onToothMouseOut(tooth)">
-        <ng-container *ngIf="tooth.isFront">
+        <ng-template [ngIf]="tooth.isFront">
           <path class="asm-jaw__tooth-front-highlight" 
               [ngClass]="tooth?.styleClass" 
               [attr.d]="tooth?.highlightPath"/>
           <path class="asm-jaw__tooth-front-shadow" 
               [ngClass]="tooth?.styleClass" 
               [attr.d]="tooth?.shadowPath"/>
-        </ng-container>
-        <ng-container *ngIf="!tooth.isFront">
+        </ng-template>
+        <ng-template [ngIf]="!tooth.isFront">
           <path class="asm-jaw__tooth-back-shadow" 
               [attr.d]="tooth?.shadowPath"/>
           <path class="asm-jaw__tooth-back-highlight" 
               [ngClass]="tooth?.styleClass" 
               [attr.d]="tooth?.highlightPath"/>
-      </ng-container>
+      </ng-template>
       <text class="asm-jaw__tooth-label" 
           [attr.transform]="tooth?.labelTransform">
           {{ tooth.id }}
