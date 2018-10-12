@@ -8,6 +8,7 @@ import { JawService } from './jaw.service';
   styleUrls: ['./jaw.component.scss']
 })
 export class JawComponent implements OnChanges {
+  @Input() teethNumbers: Array<number>;
   @Input() isReadOnly = false;
   @Input() topJawLabel = 'TOP';
   @Input() teeth: Array<Tooth>;
@@ -20,15 +21,13 @@ export class JawComponent implements OnChanges {
   private _teeth: Array<Tooth>;
 
   constructor(private jawService: JawService) {
-    this._teeth = jawService.createDefaultTeethArray();
+    this._teeth = this.createTeethArray();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    const changedTeeth = changes['teeth'].currentValue as Array<Tooth>;
-
     this._teeth = this.mergeToothArrays(
-      this.jawService.createDefaultTeethArray(),
-      changedTeeth
+      this.createTeethArray(),
+      this.teeth
     );
   }
 
@@ -53,6 +52,12 @@ export class JawComponent implements OnChanges {
 
   toothTrackByFn(index: number, item: Tooth) {
     return item.id;
+  }
+
+  private createTeethArray() {
+    return this.jawService.createDefaultTeethArray(
+      this.teethNumbers
+    );
   }
 
   private isModifiedTooth(tooth: Tooth): boolean {

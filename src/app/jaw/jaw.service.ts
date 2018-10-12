@@ -5,7 +5,7 @@ import { Tooth, ToothSVG } from './tooth.model';
 export class JawService {
 
   // tslint:disable
-  createDefaultTeethArray(): Array<Tooth> {
+  createDefaultTeethArray(teethNumbers?: Array<number>): Array<Tooth> {
     const teethModels: Array<ToothSVG> = [
       {
         id: 11,
@@ -233,6 +233,12 @@ export class JawService {
       },
     ];
 
-    return teethModels;
+    if(teethNumbers) {
+      return teethModels.filter(t => {
+        return teethNumbers.find(n => n === t.id);
+      });
+    } else {
+      return teethModels;
+    }
   }
 }
