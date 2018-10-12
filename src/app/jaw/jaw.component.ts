@@ -81,9 +81,9 @@ export class JawComponent implements OnChanges {
 
   private mergeToothArrays(src: Array<Tooth>, dst: Array<Tooth>): Array<Tooth> {
     return src.map(tooth => {
-      // const found = (dst || []).find(t => t.id === tooth.id);
-      // return { ...tooth, ...found };
-      return (dst || []).find(t => t.id === tooth.id) || tooth;
+      const found = (dst || []).find(t => t.id === tooth.id);
+      return { ...tooth, ...found };
+      // return (dst || []).find(t => t.id === tooth.id) || tooth;
     });
   }
 }
