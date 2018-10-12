@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JawComponent } from './jaw.component';
+import { JawService } from './jaw.service';
 
 @NgModule({
   imports: [
@@ -11,6 +12,9 @@ import { JawComponent } from './jaw.component';
   ],
   declarations: [
     JawComponent
+  ],
+  providers: [
+    JawService
   ]
 })
 export class JawModule { }
