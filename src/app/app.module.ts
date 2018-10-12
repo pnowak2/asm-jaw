@@ -1,18 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-import { JawComponent } from './jaw/jaw.component';
-
+import { JawModule } from './jaw/jaw.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    JawComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    JawModule
   ],
   providers: [],
   bootstrap: [AppComponent]
