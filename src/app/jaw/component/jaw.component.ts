@@ -18,7 +18,7 @@ export class JawComponent implements OnChanges {
   @Output() toothMouseOver = new EventEmitter<Tooth>();
   @Output() toothMouseOut = new EventEmitter<Tooth>();
 
-  private _teeth: Array<Tooth>;
+  _teeth: Array<Tooth>;
 
   constructor(private jawService: JawService) {
     this._teeth = this.createTeethArray();
