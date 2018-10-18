@@ -1,0 +1,78 @@
+.asm-hand {
+  animation: pulse-hands 2s infinite;
+  animation-direction: alternate;
+  animation-delay: 1s;
+  transform-origin: 50% 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.asm-boob {
+  animation: pulse 2s infinite;
+  animation-direction: alternate;
+  transform-origin: 50% 0;
+  transition: all 0.5s ease-in-out;
+
+  &--left {
+    animation-delay: 0.8s;
+  }
+
+  &--selected {
+    .asm-boob__bg {
+      fill: red;
+    }
+  }
+
+  .asm-boob__bg {
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    animation: pulse-hover 0.5s infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 0;
+    transform: scale(1.2);
+    transition: all 1s;
+    cursor: pointer;
+
+    .asm-boob__bg {
+      fill: #F7D4A0;
+    }
+  }
+
+  &:active {
+    animation: none;
+    transition: all 0.5s;
+    transform: scale(1.1);
+
+    .asm-boob__bg {
+      fill: #F7B092;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes pulse-hover {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse-hands {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}

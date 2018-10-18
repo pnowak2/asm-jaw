@@ -1,7 +1,14 @@
-.asm-tooth--reimbursed {
-  fill: #90d090 !important;
+.asm-align {
+  display: flex;
+  justify-content: center;
 }
 
-.asm-tooth--rejected {
-  fill: #ff9999 !important;
+.asm-caption {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: -2rem;
+  font-size: 0.8rem;
 }

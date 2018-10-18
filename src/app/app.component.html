@@ -1,20 +1,10 @@
-<asm-jaw [(teeth)]="teeth" 
-         topJawLabel="Supérieure"
-         [teethNumbers]="teethNumbers"
-         [isReadOnly]="isReadOnly"
-         (teethChange)="onTeethChange($event)"
-         (toothClick)="onToothClick($event)"
-         (toothMouseOver)="onToothMouseOver($event)"
-         (toothMouseOut)="onToothMouseOut($event)">
-</asm-jaw>
-
-<!-- Diagnostics debug -->
-
-<div>
-  <button (click)="onToggleMode()">{{ isReadOnly ? 'Edit' : 'Read only' }}</button>
-  <button (click)="onReset()">Reset teeth</button>
-  <button (click)="onInitTeeth()">Select some teeth</button>
-  <button (click)="onFrontTeeth()">Front Teeth</button>
-  <button (click)="onBackTeeth()">Back Teeth</button>
-  <button (click)="onAllTeeth()">All Teeth</button>
+<div class="asm-align">
+  <asm-boobs [(boobs)]="boobs" 
+             (boobClick)="onBoobClick($event)">
+  </asm-boobs>
 </div>
+
+<div class="asm-align">
+  <p class="asm-caption">Asm Mammography v.0.0.1 All rights reserved</p>
+</div>
+
